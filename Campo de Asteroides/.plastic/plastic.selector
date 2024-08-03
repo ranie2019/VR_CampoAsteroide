@@ -1,0 +1,4 @@
+repository "Campo de Asteroides@Ranie@cloud"
+  path "/"
+    br "/main"
+    co "/main"
