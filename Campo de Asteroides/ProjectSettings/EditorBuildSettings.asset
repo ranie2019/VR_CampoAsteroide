@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/SpaceShooter2022/Art/Models/MoonBase/Scenes/DemoScene.unity
+    guid: dda76b0996caee64d82512bd822ae302
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1244125c87f94fbb05ecf3ec3f211, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e9d758dffff27ec4e85268fed5a05769, type: 2}
