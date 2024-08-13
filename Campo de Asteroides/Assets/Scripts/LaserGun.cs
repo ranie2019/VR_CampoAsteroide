@@ -10,12 +10,20 @@ public class LaserGun : MonoBehaviour
     [Tooltip("Som reproduzido ao disparar o laser.")]
     [SerializeField] private AudioClip laserSFX;
 
+    [Header("Origem do Raycast")]
+    [Tooltip("Transform de onde o raycast será emitido.")]
+    [SerializeField] private Transform raycastOrigin;
+
     [Header("Configurações da Bala")]
     [Tooltip("Prefab da bala que será instanciada ao disparar.")]
     [SerializeField] private GameObject bulletPrefab;
 
     [Tooltip("Velocidade da bala disparada.")]
     [SerializeField] private float bulletSpeed = 20f;
+
+    [Header("Ponto de Spawn da Bala")]
+    [Tooltip("Transform que define o ponto de spawn da bala.")]
+    [SerializeField] private Transform bulletSpawnPoint;
 
     private AudioSource laserAudioSource;
 
@@ -56,25 +64,21 @@ public class LaserGun : MonoBehaviour
 
     private void FireBullet()
     {
-        if (bulletPrefab != null)
+        if (bulletPrefab != null && bulletSpawnPoint != null)
         {
-            // Instancia a bala na posição e direção da arma
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+            // Instancia a bala no ponto de spawn
+            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
 
             // Aplica uma força na bala para movê-la para frente
             Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
             if (bulletRigidbody != null)
             {
-                bulletRigidbody.velocity = transform.forward * bulletSpeed;
-            }
-            else
-            {
-                Debug.LogError("A bala não possui um Rigidbody!");
+                bulletRigidbody.velocity = bulletSpawnPoint.forward * bulletSpeed;
             }
         }
         else
         {
-            Debug.LogError("bulletPrefab não está atribuído!");
+            Debug.LogWarning("BulletPrefab ou BulletSpawnPoint não estão atribuídos.");
         }
     }
 }
