@@ -12,21 +12,29 @@ public class AsteroidHit : MonoBehaviour
     [Tooltip("Delay para destruir o asteroide após a explosão (se necessário).")]
     [SerializeField] private float asteroidDestroyDelay = 0f;
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Verifica se o objeto com o qual o asteroide colidiu tem a tag "Laser"
+        if (collision.gameObject.CompareTag("Laser"))
+        {
+            // Destrói o asteroide e instancia a explosão
+            AsteroidDestroyed();
+
+            // Destrói a bala após a colisão
+            Destroy(collision.gameObject);
+        }
+    }
+
     /// <summary>
     /// Destrói o asteroide e instancia a explosão.
     /// </summary>
-    public void AsteroidDestroyed()
+    private void AsteroidDestroyed()
     {
         // Verifica se a explosão foi atribuída
         if (asteroidExplosion != null)
         {
             // Instancia a explosão na posição e rotação do asteroide
             GameObject explosion = Instantiate(asteroidExplosion, transform.position, transform.rotation);
-
-            float distanceFromPlayer = Vector3.Distance(transform.position, Vector3.zero);
-            int bonusPoint = (int)distanceFromPlayer;
-
-            int asteroidScore = 1 * bonusPoint;
 
             // Destrói a explosão após o tempo especificado
             Destroy(explosion, explosionLifetime);

@@ -10,12 +10,14 @@ public class LaserGun : MonoBehaviour
     [Tooltip("Som reproduzido ao disparar o laser.")]
     [SerializeField] private AudioClip laserSFX;
 
-    [Header("Origem do Raycast")]
-    [Tooltip("Transform de onde o raycast será emitido.")]
-    [SerializeField] private Transform raycastOrigin;
+    [Header("Configurações da Bala")]
+    [Tooltip("Prefab da bala que será instanciada ao disparar.")]
+    [SerializeField] private GameObject bulletPrefab;
+
+    [Tooltip("Velocidade da bala disparada.")]
+    [SerializeField] private float bulletSpeed = 20f;
 
     private AudioSource laserAudioSource;
-    private RaycastHit hit;
 
     private void Awake()
     {
@@ -48,15 +50,31 @@ public class LaserGun : MonoBehaviour
             laserAudioSource.Play();
         }
 
-        // Executa o Raycast a partir da origem definida
-        if (raycastOrigin != null && Physics.Raycast(raycastOrigin.position, raycastOrigin.forward, out hit, 800f))
+        // Instancia e dispara a bala
+        FireBullet();
+    }
+
+    private void FireBullet()
+    {
+        if (bulletPrefab != null)
         {
-            // Verifica se o objeto atingido possui o script AsteroidHit
-            AsteroidHit asteroidHit = hit.transform.GetComponent<AsteroidHit>();
-            if (asteroidHit != null)
+            // Instancia a bala na posição e direção da arma
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+
+            // Aplica uma força na bala para movê-la para frente
+            Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+            if (bulletRigidbody != null)
             {
-                asteroidHit.AsteroidDestroyed();
+                bulletRigidbody.velocity = transform.forward * bulletSpeed;
             }
+            else
+            {
+                Debug.LogError("A bala não possui um Rigidbody!");
+            }
+        }
+        else
+        {
+            Debug.LogError("bulletPrefab não está atribuído!");
         }
     }
 }

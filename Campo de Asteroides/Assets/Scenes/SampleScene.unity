@@ -1961,7 +1961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3155533665484440204, guid: c9250c3e4617e3840a9d0bf4a1282aa8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.72
+      value: 45.4
       objectReference: {fileID: 0}
     - target: {fileID: 3155533665484440204, guid: c9250c3e4617e3840a9d0bf4a1282aa8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1969,7 +1969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3155533665484440204, guid: c9250c3e4617e3840a9d0bf4a1282aa8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 42.35
+      value: 36.7
       objectReference: {fileID: 0}
     - target: {fileID: 3155533665484440204, guid: c9250c3e4617e3840a9d0bf4a1282aa8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2929,7 +2929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerImage: {fileID: 627502846}
-  gameTime: 10
+  gameTime: 100
 --- !u!1 &784731033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3453,7 +3453,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3855397916406632481, guid: 342a1b253568e854f9a2e953d07332d3, type: 3}
       propertyPath: m_Name
-      value: Gun (1)
+      value: Gun 2
       objectReference: {fileID: 0}
     - target: {fileID: 3855397916406632483, guid: 342a1b253568e854f9a2e953d07332d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3746,7 +3746,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 3.12
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -3781,7 +3781,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3835,7 +3835,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserAnimator: {fileID: 343786175}
   laserSFX: {fileID: 8300000, guid: fa5f15d5c001e1249a46f30914256f91, type: 3}
-  raycastOrigin: {fileID: 872288967}
+  bulletPrefab: {fileID: 4016273362745119833, guid: 769dd651998a4594f9f3b86844decaff, type: 3}
+  bulletSpeed: 20
 --- !u!114 &861631610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3933,11 +3934,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7013922252880172711, guid: bcbca6aa0b7bb6c42afce1f1a86c0851, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1586905
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 7013922252880172711, guid: bcbca6aa0b7bb6c42afce1f1a86c0851, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 42.904
+      value: 56.6
       objectReference: {fileID: 0}
     - target: {fileID: 7013922252880172711, guid: bcbca6aa0b7bb6c42afce1f1a86c0851, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4613,7 +4614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4256408802689727948, guid: 71aead153a51edc4093e3b9556d6c10a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 37.96
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 4256408802689727948, guid: 71aead153a51edc4093e3b9556d6c10a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7088,19 +7089,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3855397916406632481, guid: 342a1b253568e854f9a2e953d07332d3, type: 3}
       propertyPath: m_Name
-      value: Gun
+      value: Gun 1
       objectReference: {fileID: 0}
     - target: {fileID: 3855397916406632483, guid: 342a1b253568e854f9a2e953d07332d3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.3166
+      value: 0.3186
       objectReference: {fileID: 0}
     - target: {fileID: 3855397916406632483, guid: 342a1b253568e854f9a2e953d07332d3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9669
+      value: 0.9641
       objectReference: {fileID: 0}
     - target: {fileID: 3855397916406632483, guid: 342a1b253568e854f9a2e953d07332d3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.483
+      value: 0.2475
       objectReference: {fileID: 0}
     - target: {fileID: 3855397916406632483, guid: 342a1b253568e854f9a2e953d07332d3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7129,6 +7130,18 @@ PrefabInstance:
     - target: {fileID: 3855397916406632483, guid: 342a1b253568e854f9a2e953d07332d3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 89.317
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141288993806384116, guid: 342a1b253568e854f9a2e953d07332d3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141288993806384116, guid: 342a1b253568e854f9a2e953d07332d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8141288993806384116, guid: 342a1b253568e854f9a2e953d07332d3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7251,7 +7264,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -7947,7 +7960,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 3.12
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -7982,7 +7995,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -8036,7 +8049,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserAnimator: {fileID: 1117824690}
   laserSFX: {fileID: 8300000, guid: fa5f15d5c001e1249a46f30914256f91, type: 3}
-  raycastOrigin: {fileID: 1631228956}
+  bulletPrefab: {fileID: 4016273362745119833, guid: 769dd651998a4594f9f3b86844decaff, type: 3}
+  bulletSpeed: 500
 --- !u!114 &2077930715
 MonoBehaviour:
   m_ObjectHideFlags: 0
