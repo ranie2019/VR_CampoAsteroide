@@ -4464,7 +4464,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidSpawnerScript: {fileID: 1174005519}
-  destructionDelay: 0.1
+  deactivationDelay: 0.1
+  gameController: {fileID: 733985958}
 --- !u!65 &1061184322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4668,7 +4669,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   asteroidSpawnerScript: {fileID: 1174005519}
-  destructionDelay: 0.1
+  deactivationDelay: 0.1
+  gameController: {fileID: 733985958}
 --- !u!65 &1135362002
 BoxCollider:
   m_ObjectHideFlags: 0
