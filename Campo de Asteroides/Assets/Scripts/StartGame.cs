@@ -21,8 +21,10 @@ public class StartGame : MonoBehaviour
                 asteroidSpawner.SetActive(true);
             }
 
-            // Destroi o objeto atual e a bala que colidiu após um pequeno delay
+            // Destrói o objeto atual (que possui o script StartGame)
             Destroy(gameObject, destructionDelay);
+
+            // Destrói o objeto que colidiu (neste caso, o "Laser")
             Destroy(collision.gameObject);
         }
     }

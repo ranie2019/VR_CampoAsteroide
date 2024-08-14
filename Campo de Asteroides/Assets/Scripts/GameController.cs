@@ -4,31 +4,15 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private Image timerImage;
-    [SerializeField] private float gameTime;
-    private float sliderCurrentFillAmount = 1f;
-
     [Header("Score Components")]
     [SerializeField] private TextMeshProUGUI scoreText;
 
+    private float currentFillAmount = 1f;
     private int playerScore;
 
-    private void Update()
+    public void UpdatePlayerScore(int points)
     {
-        // Atualiza o temporizador
-        AdjustTimer();
-    }
-
-    private void AdjustTimer()
-    {
-        timerImage.fillAmount = sliderCurrentFillAmount - (Time.deltaTime / gameTime);
-
-        sliderCurrentFillAmount = timerImage.fillAmount;
-    }
-
-    public void UpdadePlayerScore(int asteroidHitPoints)
-    {
-        playerScore += asteroidHitPoints;
+        playerScore += points;
         scoreText.text = playerScore.ToString();
     }
 }

@@ -1,47 +1,68 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AsteroidMovimento : MonoBehaviour
 {
     [Header("Controle de Velocidade do Asteroide")]
-    public float maxSpeed = 5f;
-    public float minSpeed = 1f;
+    [SerializeField] private float maxSpeed = 5f;
+    [SerializeField] private float minSpeed = 1f;
 
     [Header("Controle da Velocidade de Rotação")]
-    public float rotationSpeedMax = 100f;
-    public float rotationSpeedMin = 10f;
+    [SerializeField] private float rotationSpeedMax = 100f;
+    [SerializeField] private float rotationSpeedMin = 10f;
 
+    private float asteroidSpeed;
     private float rotationalSpeed;
     private Vector3 rotationAxis;
-    public Vector3 movimentDirection = Vector3.forward; // Define a direção de movimento padrão
-    private float asteroidSpeed;
+    private Vector3 movementDirection = Vector3.left; // Direção de movimento no eixo -X
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        // Configura a velocidade de movimento do asteroide
-        asteroidSpeed = Random.Range(minSpeed, maxSpeed);
+        ConfigureAsteroidMovement();
+        ConfigureAsteroidRotation();
+    }
 
-        // Define um eixo de rotação aleatório e velocidade de rotação
+    private void Update()
+    {
+        MoveAsteroid();
+        RotateAsteroid();
+    }
+
+    /// <summary>
+    /// Configura a velocidade de movimento e a direção do asteroide.
+    /// </summary>
+    private void ConfigureAsteroidMovement()
+    {
+        asteroidSpeed = Random.Range(minSpeed, maxSpeed);
+        movementDirection = movementDirection.normalized * asteroidSpeed;
+    }
+
+    /// <summary>
+    /// Configura o eixo e a velocidade de rotação do asteroide.
+    /// </summary>
+    private void ConfigureAsteroidRotation()
+    {
         rotationAxis = new Vector3(
             Random.Range(-1f, 1f),
             Random.Range(-1f, 1f),
             Random.Range(-1f, 1f)
-        ).normalized; // Normaliza o vetor para garantir rotação uniforme
-        rotationalSpeed = Random.Range(rotationSpeedMin, rotationSpeedMax);
+        ).normalized;
 
-        // Normaliza a direção de movimento e a multiplica pela velocidade
-        movimentDirection = movimentDirection.normalized * asteroidSpeed;
+        rotationalSpeed = Random.Range(rotationSpeedMin, rotationSpeedMax);
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Move o asteroide na direção especificada.
+    /// </summary>
+    private void MoveAsteroid()
     {
-        // Move o asteroide na direção especificada
-        transform.Translate(movimentDirection * Time.deltaTime, Space.World);
+        transform.Translate(movementDirection * Time.deltaTime, Space.World);
+    }
 
-        // Rotaciona o asteroide ao redor do eixo definido
+    /// <summary>
+    /// Rotaciona o asteroide ao redor do eixo definido.
+    /// </summary>
+    private void RotateAsteroid()
+    {
         transform.Rotate(rotationAxis * rotationalSpeed * Time.deltaTime, Space.World);
     }
 }

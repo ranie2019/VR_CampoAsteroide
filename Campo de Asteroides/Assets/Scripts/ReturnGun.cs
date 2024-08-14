@@ -11,24 +11,57 @@ public class ReturnGun : MonoBehaviour
 
     private void Awake()
     {
-        // Inicializa o XRGrabInteractable
-        grabInteractable = GetComponent<XRGrabInteractable>();
-
-        // Salva a posição e rotação originais da arma
-        originPose.position = transform.position;
-        originPose.rotation = transform.rotation;
+        InitializeGrabInteractable();
+        SaveOriginalPose();
     }
 
     private void OnEnable()
     {
-        // Adiciona o listener para o evento de soltura
-        grabInteractable.selectExited.AddListener(OnGunReleased);
+        RegisterEventListeners();
     }
 
     private void OnDisable()
     {
-        // Remove o listener quando o objeto é desativado
-        grabInteractable.selectExited.RemoveListener(OnGunReleased);
+        UnregisterEventListeners();
+    }
+
+    /// <summary>
+    /// Inicializa o XRGrabInteractable.
+    /// </summary>
+    private void InitializeGrabInteractable()
+    {
+        grabInteractable = GetComponent<XRGrabInteractable>();
+    }
+
+    /// <summary>
+    /// Salva a posição e rotação originais da arma.
+    /// </summary>
+    private void SaveOriginalPose()
+    {
+        originPose.position = transform.position;
+        originPose.rotation = transform.rotation;
+    }
+
+    /// <summary>
+    /// Registra os listeners para os eventos necessários.
+    /// </summary>
+    private void RegisterEventListeners()
+    {
+        if (grabInteractable != null)
+        {
+            grabInteractable.selectExited.AddListener(OnGunReleased);
+        }
+    }
+
+    /// <summary>
+    /// Remove os listeners dos eventos.
+    /// </summary>
+    private void UnregisterEventListeners()
+    {
+        if (grabInteractable != null)
+        {
+            grabInteractable.selectExited.RemoveListener(OnGunReleased);
+        }
     }
 
     /// <summary>
@@ -37,7 +70,14 @@ public class ReturnGun : MonoBehaviour
     /// <param name="arg0">Argumentos do evento de soltura.</param>
     private void OnGunReleased(SelectExitEventArgs arg0)
     {
-        // Retorna a arma à posição e rotação originais
+        ResetToOriginalPose();
+    }
+
+    /// <summary>
+    /// Retorna a arma à posição e rotação originais.
+    /// </summary>
+    private void ResetToOriginalPose()
+    {
         transform.SetPositionAndRotation(originPose.position, originPose.rotation);
     }
 }
