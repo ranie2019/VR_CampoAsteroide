@@ -3,8 +3,8 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
     [Header("Spawner a ser congelado")]
-    [Tooltip("Referência ao script de Spawner que será congelado.")]
-    [SerializeField] private AsteroidSpawner asteroidSpawner;
+    [Tooltip("Referência ao script de Spawner que será desabilitado.")]
+    [SerializeField] private AsteroidSpawner asteroidSpawnerScript;
 
     [Header("Tag de Verificação")]
     [Tooltip("Tag do objeto que, ao colidir, causará o congelamento do spawner.")]
@@ -16,45 +16,54 @@ public class GameOver : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Verifica se o objeto colidido tem a tag correta
         if (collision.gameObject.CompareTag(asteroidTag))
         {
-            Debug.Log($"Colisão detectada com: {collision.gameObject.name}, tag: {asteroidTag}");
-
-            // Congela o Asteroid Spawner, desativando seu comportamento de spawn
-            if (asteroidSpawner != null)
-            {
-                asteroidSpawner.enabled = false;
-                Debug.Log("Asteroid Spawner foi congelado.");
-            }
-
-            // Habilita o objeto de Game Over
-            if (gameOverUI != null)
-            {
-                gameOverUI.SetActive(true);
-                Debug.Log("Objeto Game Over habilitado.");
-            }
-
-            // Destrói todos os objetos com a tag "Asteroid"
-            DestroyAllAsteroids();
-
-            // Destrói o objeto que causou o Game Over
-            Destroy(collision.gameObject);
-            Debug.Log($"Objeto {collision.gameObject.name} destruído.");
+            HandleGameOver(collision);
         }
         else
         {
-            Debug.Log($"Colisão com um objeto de tag diferente: {collision.gameObject.tag}");
+            Debug.Log($"Colisão com objeto de tag diferente: {collision.gameObject.tag}");
         }
+    }
+
+    private void HandleGameOver(Collision collision)
+    {
+        // Desabilita o script Asteroid Spawner se a referência estiver correta
+        if (asteroidSpawnerScript != null)
+        {
+            if (asteroidSpawnerScript.enabled)
+            {
+                asteroidSpawnerScript.enabled = false;
+                Debug.Log("Script Asteroid Spawner foi desabilitado.");
+            }
+            else
+            {
+                Debug.LogWarning("Script Asteroid Spawner já está desabilitado.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Referência ao script Asteroid Spawner está faltando!");
+        }
+
+        // Habilita o objeto de Game Over
+        if (gameOverUI != null)
+        {
+            gameOverUI.SetActive(true);
+            Debug.Log("Objeto Game Over habilitado.");
+        }
+
+        // Destrói todos os objetos com a tag "Asteroid"
+        DestroyAllAsteroids();
+
+        // Destrói o objeto que causou o Game Over
+        Destroy(collision.gameObject);
+        Debug.Log($"Objeto {collision.gameObject.name} destruído.");
     }
 
     private void DestroyAllAsteroids()
     {
-        // Encontra todos os objetos com a tag "Asteroid"
-        GameObject[] asteroids = GameObject.FindGameObjectsWithTag(asteroidTag);
-
-        // Destrói cada um dos asteroides encontrados
-        foreach (GameObject asteroid in asteroids)
+        foreach (GameObject asteroid in GameObject.FindGameObjectsWithTag(asteroidTag))
         {
             Destroy(asteroid);
             Debug.Log($"Asteroide {asteroid.name} destruído.");
