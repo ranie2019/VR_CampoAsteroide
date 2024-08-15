@@ -10,32 +10,13 @@ public class HandAnimation : MonoBehaviour
 
     private void OnEnable()
     {
-        if (gripAction?.action != null)
-        {
-            gripAction.action.performed += Gripping;
-            gripAction.action.canceled += GripRelease;
-        }
+        //grip
+        gripAction.action.performed += Gripping;
+        gripAction.action.canceled += GripRelease;
 
-        if (pinchAction?.action != null)
-        {
-            pinchAction.action.performed += Pinching;
-            pinchAction.action.canceled += PinchRelease;
-        }
-    }
-
-    private void OnDisable()
-    {
-        if (gripAction?.action != null)
-        {
-            gripAction.action.performed -= Gripping;
-            gripAction.action.canceled -= GripRelease;
-        }
-
-        if (pinchAction?.action != null)
-        {
-            pinchAction.action.performed -= Pinching;
-            pinchAction.action.canceled -= PinchRelease;
-        }
+        //pinch
+        pinchAction.action.performed += Pinching;
+        pinchAction.action.canceled += PinchRelease;
     }
 
     private void Awake() => animator = GetComponent<Animator>();
@@ -47,4 +28,5 @@ public class HandAnimation : MonoBehaviour
     private void Pinching(InputAction.CallbackContext obj) => animator.SetFloat("Pinch", obj.ReadValue<float>());
 
     private void PinchRelease(InputAction.CallbackContext obj) => animator.SetFloat("Pinch", 0f);
+
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4016273362745119835}
   - component: {fileID: 4016273362745119832}
   - component: {fileID: 2854365481877169882}
+  - component: {fileID: 8428855213715118589}
   m_Layer: 11
   m_Name: LaserBeam
   m_TagString: Laser
@@ -96,6 +97,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 20
+--- !u!114 &8428855213715118589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4016273362745119833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af95d912fefeb22468a5fb837766301c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4016273363007671781
 GameObject:
   m_ObjectHideFlags: 0
