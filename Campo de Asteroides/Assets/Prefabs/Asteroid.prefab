@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7344894049431644019}
   - component: {fileID: 5439119343056892520}
   - component: {fileID: 8035745775285581208}
+  - component: {fileID: 150210673931175889}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Asteroid
@@ -73,7 +74,6 @@ MonoBehaviour:
   minSpeed: 10
   rotationSpeedMax: 50
   rotationSpeedMin: 10
-  movimentDirection: {x: -1, y: 0, z: 0}
 --- !u!114 &5439119343056892520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +104,27 @@ MonoBehaviour:
   asteroidDestroyDelay: 0
   gameController: {fileID: 0}
   popupCanvas: {fileID: 8156788275824232043, guid: 1e3afd5714cbb334389f18888e945290, type: 3}
+--- !u!95 &150210673931175889
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8512000840424516683}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 817d0ec838f6e4e4c851ff38a5b7f618, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &2996188979316244303
 PrefabInstance:
   m_ObjectHideFlags: 0
