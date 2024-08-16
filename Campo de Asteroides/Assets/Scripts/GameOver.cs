@@ -14,6 +14,10 @@ public class GameOver : MonoBehaviour
     [Tooltip("Referência ao objeto que será habilitado ao ocorrer o Game Over.")]
     [SerializeField] private GameObject gameOverUI;
 
+    [Header("Audio Player")]
+    [Tooltip("Referência ao script AudioPlayer.")]
+    [SerializeField] private AudioPlayer audioPlayer;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag(asteroidTag))
@@ -59,6 +63,13 @@ public class GameOver : MonoBehaviour
         // Destrói o objeto que causou o Game Over
         Destroy(collision.gameObject);
         Debug.Log($"Objeto {collision.gameObject.name} destruído.");
+
+        // Troca o áudio do jogo para o áudio de Game Over
+        if (audioPlayer != null)
+        {
+            audioPlayer.StopMainGameAudio();
+            audioPlayer.PlayGameOverAudio();
+        }
     }
 
     private void DestroyAllAsteroids()

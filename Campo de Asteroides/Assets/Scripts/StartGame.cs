@@ -1,19 +1,14 @@
 using UnityEngine;
-using System.Collections;
 
 public class StartGame : MonoBehaviour
 {
+    [Header("Audio Player")]
+    [Tooltip("Referência ao script AudioPlayer.")]
+    [SerializeField] private AudioPlayer audioPlayer;
+
     [Header("Spawner a ser ativado")]
     [Tooltip("Referência ao script de Spawner que será ativado.")]
     [SerializeField] private AsteroidSpawner asteroidSpawnerScript;
-
-    [Header("Delay de Desativação")]
-    [Tooltip("Tempo em segundos antes do objeto ser desativado após a colisão.")]
-    [SerializeField] private float deactivationDelay = 0.1f;
-
-    [Header("Game Controller")]
-    [Tooltip("Referência ao script GameController para resetar o score.")]
-    [SerializeField] private GameController gameController;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -21,50 +16,22 @@ public class StartGame : MonoBehaviour
         {
             HandleCollisionWithLaser();
         }
-        else
-        {
-            Debug.Log($"Colisão com objeto de tag diferente: {collision.gameObject.tag}");
-        }
     }
 
     private void HandleCollisionWithLaser()
     {
-        // Ativa o script Asteroid Spawner se a referência estiver correta
+        // Ativa o Spawner e troca o áudio para o áudio principal do jogo
         if (asteroidSpawnerScript != null)
         {
-            if (!asteroidSpawnerScript.enabled)
-            {
-                asteroidSpawnerScript.enabled = true;
-                Debug.Log("Script Asteroid Spawner habilitado.");
-            }
-            else
-            {
-                Debug.Log("Script Asteroid Spawner já está habilitado.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Referência ao script Asteroid Spawner não está atribuída.");
+            asteroidSpawnerScript.enabled = true;
         }
 
-        // Reseta a pontuação através do GameController
-        if (gameController != null)
+        if (audioPlayer != null)
         {
-            gameController.ResetScore();
-            Debug.Log("Pontuação resetada.");
-        }
-        else
-        {
-            Debug.LogWarning("Referência ao GameController não está atribuída.");
+            audioPlayer.PlayMainGameAudio(); // Troca o áudio de introdução para o áudio principal
         }
 
-        // Desativa o objeto atual após o atraso
-        StartCoroutine(DeactivateObjectAfterDelay(deactivationDelay));
-    }
-
-    private IEnumerator DeactivateObjectAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
+        // Desativa o objeto StartGame
         gameObject.SetActive(false);
     }
 }
