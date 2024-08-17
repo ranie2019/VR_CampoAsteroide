@@ -10,6 +10,10 @@ public class StartGame : MonoBehaviour
     [Tooltip("Referência ao script de Spawner que será ativado.")]
     [SerializeField] private AsteroidSpawner asteroidSpawnerScript;
 
+    [Header("Particle System")]
+    [Tooltip("Referência ao ParticleSystem que será ativado.")]
+    [SerializeField] private ParticleSystem particleSystem;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Laser"))
@@ -29,6 +33,12 @@ public class StartGame : MonoBehaviour
         if (audioPlayer != null)
         {
             audioPlayer.PlayMainGameAudio(); // Troca o áudio de introdução para o áudio principal
+        }
+
+        // Ativa o ParticleSystem
+        if (particleSystem != null)
+        {
+            particleSystem.Play();
         }
 
         // Desativa o objeto StartGame
