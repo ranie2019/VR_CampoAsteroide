@@ -24,10 +24,6 @@ public class GameOver : MonoBehaviour
         {
             HandleGameOver(collision);
         }
-        else
-        {
-            Debug.Log($"Colisão com objeto de tag diferente: {collision.gameObject.tag}");
-        }
     }
 
     private void HandleGameOver(Collision collision)
@@ -38,23 +34,13 @@ public class GameOver : MonoBehaviour
             if (asteroidSpawnerScript.enabled)
             {
                 asteroidSpawnerScript.enabled = false;
-                Debug.Log("Script Asteroid Spawner foi desabilitado.");
             }
-            else
-            {
-                Debug.LogWarning("Script Asteroid Spawner já está desabilitado.");
-            }
-        }
-        else
-        {
-            Debug.LogError("Referência ao script Asteroid Spawner está faltando!");
         }
 
         // Habilita o objeto de Game Over
         if (gameOverUI != null)
         {
             gameOverUI.SetActive(true);
-            Debug.Log("Objeto Game Over habilitado.");
         }
 
         // Destrói todos os objetos com a tag "Asteroid"
@@ -62,7 +48,6 @@ public class GameOver : MonoBehaviour
 
         // Destrói o objeto que causou o Game Over
         Destroy(collision.gameObject);
-        Debug.Log($"Objeto {collision.gameObject.name} destruído.");
 
         // Troca o áudio do jogo para o áudio de Game Over
         if (audioPlayer != null)
@@ -77,7 +62,6 @@ public class GameOver : MonoBehaviour
         foreach (GameObject asteroid in GameObject.FindGameObjectsWithTag(asteroidTag))
         {
             Destroy(asteroid);
-            Debug.Log($"Asteroide {asteroid.name} destruído.");
         }
     }
 }

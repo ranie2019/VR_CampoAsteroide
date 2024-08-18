@@ -76,9 +76,5 @@ public class LaserGun : MonoBehaviour
                 bulletRigidbody.velocity = bulletSpawnPoint.forward * bulletSpeed;
             }
         }
-        else
-        {
-            Debug.LogWarning("BulletPrefab ou BulletSpawnPoint não estão atribuídos.");
-        }
     }
 }

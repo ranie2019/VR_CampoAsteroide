@@ -24,15 +24,16 @@ public class StartGame : MonoBehaviour
 
     private void HandleCollisionWithLaser()
     {
-        // Ativa o Spawner e troca o áudio para o áudio principal do jogo
+        // Ativa o Spawner
         if (asteroidSpawnerScript != null)
         {
             asteroidSpawnerScript.enabled = true;
         }
 
+        // Troca o áudio de introdução para o áudio principal do jogo
         if (audioPlayer != null)
         {
-            audioPlayer.PlayMainGameAudio(); // Troca o áudio de introdução para o áudio principal
+            audioPlayer.PlayRandomMainGameAudio(); // Atualize para o método correto
         }
 
         // Ativa o ParticleSystem

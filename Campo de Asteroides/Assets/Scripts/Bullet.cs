@@ -4,7 +4,7 @@ public class Bullet : MonoBehaviour
 {
     [Header("Configurações da Bala")]
     [Tooltip("Velocidade da bala.")]
-    [SerializeField] private float bulletSpeed = 20f;
+    [SerializeField] private float bulletSpeed = 800f;
 
     private Rigidbody rb;
 
@@ -18,10 +18,6 @@ public class Bullet : MonoBehaviour
         {
             rb.velocity = transform.forward * bulletSpeed;
         }
-        else
-        {
-            Debug.LogError("Rigidbody não encontrado na bala!");
-        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -32,16 +28,9 @@ public class Bullet : MonoBehaviour
 
     private void HandleCollision(Collision collision)
     {
-        // Log da colisão
-        Debug.Log($"Bala colidiu com: {collision.gameObject.name}");
-
-        // Log da velocidade da bala
-        Debug.Log($"Velocidade da bala: {rb?.velocity}");
-
         // Verifica se o objeto colidido tem a tag "Asteroid"
         if (collision.gameObject.CompareTag("Asteroid"))
         {
-            Debug.Log("Atingiu um asteroide!");
             Destroy(collision.gameObject);
         }
 

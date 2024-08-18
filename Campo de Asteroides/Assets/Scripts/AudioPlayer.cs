@@ -1,4 +1,5 @@
 using UnityEngine;
+using System; // Adiciona a diretiva para usar a classe Array
 
 public class AudioPlayer : MonoBehaviour
 {
@@ -7,43 +8,37 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
 
     [Header("Audio Clips")]
-    [Tooltip("Áudio de introdução que será tocado no início do jogo.")]
-    [SerializeField] private AudioClip introClip;
-    [Tooltip("Áudio principal do jogo que será tocado após a introdução.")]
-    [SerializeField] private AudioClip mainGameClip;
+    [Tooltip("Áudios de introdução que serão tocados no início do jogo.")]
+    [SerializeField] private AudioClip[] introClips;
+    [Tooltip("Áudios principais do jogo que serão tocados após a introdução.")]
+    [SerializeField] private AudioClip[] mainGameClips;
     [Tooltip("Áudio de Game Over que será tocado quando o jogo terminar.")]
     [SerializeField] private AudioClip gameOverClip;
 
     private void Start()
     {
-        PlayIntroAudio();
+        PlayRandomIntroAudio();
     }
 
-    private void PlayIntroAudio()
+    private void PlayRandomIntroAudio()
     {
-        if (audioSource != null && introClip != null)
+        if (audioSource != null && introClips.Length > 0)
         {
-            audioSource.clip = introClip;
+            AudioClip randomClip = introClips[UnityEngine.Random.Range(0, introClips.Length)];
+            audioSource.clip = randomClip;
             audioSource.loop = false; // O áudio de introdução não deve repetir
             audioSource.Play();
         }
-        else
-        {
-            Debug.LogWarning("AudioSource ou IntroClip não atribuído.");
-        }
     }
 
-    public void PlayMainGameAudio()
+    public void PlayRandomMainGameAudio()
     {
-        if (audioSource != null && mainGameClip != null)
+        if (audioSource != null && mainGameClips.Length > 0)
         {
-            audioSource.clip = mainGameClip;
+            AudioClip randomClip = mainGameClips[UnityEngine.Random.Range(0, mainGameClips.Length)];
+            audioSource.clip = randomClip;
             audioSource.loop = true; // O áudio principal pode repetir
             audioSource.Play();
-        }
-        else
-        {
-            Debug.LogWarning("AudioSource ou MainGameClip não atribuído.");
         }
     }
 
@@ -55,15 +50,11 @@ public class AudioPlayer : MonoBehaviour
             audioSource.loop = false; // O áudio de Game Over não deve repetir
             audioSource.Play();
         }
-        else
-        {
-            Debug.LogWarning("AudioSource ou GameOverClip não atribuído.");
-        }
     }
 
     public void StopMainGameAudio()
     {
-        if (audioSource != null && audioSource.isPlaying && audioSource.clip == mainGameClip)
+        if (audioSource != null && audioSource.isPlaying && audioSource.clip != null && Array.Exists(mainGameClips, clip => clip == audioSource.clip))
         {
             audioSource.Stop();
         }

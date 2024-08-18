@@ -55,7 +55,6 @@ public class AsteroidSpawner : MonoBehaviour
     {
         if (asteroidModels.Length == 0)
         {
-            Debug.LogWarning("Nenhum modelo de asteroide configurado.");
             return null;
         }
 

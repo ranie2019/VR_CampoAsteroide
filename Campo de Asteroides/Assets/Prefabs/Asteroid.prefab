@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7344894049431644019}
   - component: {fileID: 5439119343056892520}
   - component: {fileID: 8035745775285581208}
-  - component: {fileID: 150210673931175889}
+  - component: {fileID: 2843700484471463426}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Asteroid
@@ -104,7 +104,7 @@ MonoBehaviour:
   asteroidDestroyDelay: 0
   gameController: {fileID: 0}
   popupCanvas: {fileID: 8156788275824232043, guid: 1e3afd5714cbb334389f18888e945290, type: 3}
---- !u!95 &150210673931175889
+--- !u!95 &2843700484471463426
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 97707c929e9dfc1448093f7c04548bf8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.017183779
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 97707c929e9dfc1448093f7c04548bf8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -159,7 +159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 97707c929e9dfc1448093f7c04548bf8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.014762365
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 97707c929e9dfc1448093f7c04548bf8, type: 3}
       propertyPath: m_LocalRotation.w

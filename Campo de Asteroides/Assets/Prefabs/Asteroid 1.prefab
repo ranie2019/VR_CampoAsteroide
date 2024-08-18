@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8235158041246172363}
   - component: {fileID: 7231622044635737719}
   - component: {fileID: -4907256995484185806}
-  - component: {fileID: 1556739827057578709}
+  - component: {fileID: 4751494777195975133}
   m_Layer: 0
   m_Name: Asteroid 1
   m_TagString: Asteroid
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 323.15607, y: 2.7662733, z: 312.7352}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1324173804078565708}
@@ -104,7 +104,7 @@ MonoBehaviour:
   asteroidDestroyDelay: 0
   gameController: {fileID: 0}
   popupCanvas: {fileID: 8156788275824232043, guid: 1e3afd5714cbb334389f18888e945290, type: 3}
---- !u!95 &1556739827057578709
+--- !u!95 &4751494777195975133
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ Animator:
   m_GameObject: {fileID: 151664}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e378b83a10b631c459c2cc4064b2ed21, type: 2}
+  m_Controller: {fileID: 9100000, guid: 00f7756bd494be343b1d769a367c173d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -186,7 +186,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: aee7af7d2a2a07a4d95b53d21946e3f3, type: 2}
+  - {fileID: 2100000, guid: c7457e486f0a7f8488f3028cde24b3d4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
