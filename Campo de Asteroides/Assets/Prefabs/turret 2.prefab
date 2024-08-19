@@ -891,7 +891,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 680263624431698553}
-  - component: {fileID: 773999180696411334}
   - component: {fileID: 387789679358475790}
   m_Layer: 0
   m_Name: turret 2
@@ -917,30 +916,6 @@ Transform:
   - {fileID: 82701632608880160}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &773999180696411334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8870592839556487193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b02f974098562b41bd08b289a6b31ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 3000
-  mount: {fileID: 6343879414758231175}
-  head: {fileID: 7835767336952079181}
-  attachPoints:
-  - {fileID: 3133819905023853916}
-  - {fileID: 8579272127746235667}
-  - {fileID: 3363624813957705713}
-  - {fileID: 1680315773096527798}
-  projectile: {fileID: 1764550164022644, guid: 84e4b9c45120b984a8c11f935c7f4aa8, type: 3}
-  fireRate: 5
-  projectileSpeed: 5000
-  laserSFX: {fileID: 8300000, guid: 5c01ed196f6fd054e8b4032b7b9dec11, type: 3}
 --- !u!82 &387789679358475790
 AudioSource:
   m_ObjectHideFlags: 0

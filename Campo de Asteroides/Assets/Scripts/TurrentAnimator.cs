@@ -2,50 +2,36 @@ using UnityEngine;
 
 public class TurrentAnimator : MonoBehaviour
 {
-    // Referências aos Animators que controlam as animações da torre
-    public Animator turretAnimator1;
-    public Animator turretAnimator2;
+    [Header("Animators")]
+    [Tooltip("Referências aos Animators que controlam as animações da torre.")]
+    [SerializeField] private Animator turretAnimator1;
+    [SerializeField] private Animator turretAnimator2;
 
-    // Variável para controlar a ativação dos Animators
-    public bool animatorsEnabledOnStart = false;
-
-    private void Start()
-    {
-        // Desativa os Animators no início
-        SetAnimatorsEnabled(false);
-    }
-
-    // Método público para acionar as animações de disparo em ambos os Animators
-    public void PlayFireAnimation()
-    {
-        if (turretAnimator1 != null && turretAnimator2 != null)
-        {
-            // Verifica se os Animators estão ativados antes de tentar acionar a animação
-            if (turretAnimator1.enabled && turretAnimator2.enabled)
-            {
-                turretAnimator1.SetTrigger("Fire");
-                turretAnimator2.SetTrigger("Fire");
-            }
-        }
-    }
-
-    // Método público para ativar os Animators
-    public void EnableAnimators()
-    {
-        SetAnimatorsEnabled(true);
-    }
-
-    // Método privado para ativar ou desativar os Animators
-    private void SetAnimatorsEnabled(bool enabled)
+    // Método público para ativar a animação de disparo
+    public void ActivateFireAnimation()
     {
         if (turretAnimator1 != null)
         {
-            turretAnimator1.enabled = enabled;
+            turretAnimator1.SetBool("Laser", true);
         }
 
         if (turretAnimator2 != null)
         {
-            turretAnimator2.enabled = enabled;
+            turretAnimator2.SetBool("Laser", true);
+        }
+    }
+
+    // Método público para desativar a animação de disparo
+    public void DeactivateFireAnimation()
+    {
+        if (turretAnimator1 != null)
+        {
+            turretAnimator1.SetBool("Laser", false);
+        }
+
+        if (turretAnimator2 != null)
+        {
+            turretAnimator2.SetBool("Laser", false);
         }
     }
 }
