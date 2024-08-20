@@ -25,7 +25,6 @@ public class AudioPlayer : MonoBehaviour
         if (audioSource != null && introClips.Length > 0)
         {
             AudioClip randomClip = introClips[UnityEngine.Random.Range(0, introClips.Length)];
-            Debug.Log($"Tocando intro: {randomClip.name}");
             audioSource.clip = randomClip;
             audioSource.loop = false; // O áudio de introdução não deve repetir
             audioSource.Play();
@@ -37,7 +36,6 @@ public class AudioPlayer : MonoBehaviour
         if (audioSource != null && mainGameClips.Length > 0)
         {
             AudioClip randomClip = mainGameClips[UnityEngine.Random.Range(0, mainGameClips.Length)];
-            Debug.Log($"Tocando main game audio: {randomClip.name}");
             audioSource.clip = randomClip;
             audioSource.loop = true; // O áudio principal pode repetir
             audioSource.Play();
@@ -48,7 +46,6 @@ public class AudioPlayer : MonoBehaviour
     {
         if (audioSource != null && gameOverClip != null)
         {
-            Debug.Log($"Tocando game over audio: {gameOverClip.name}");
             audioSource.clip = gameOverClip;
             audioSource.loop = false; // O áudio de Game Over não deve repetir
             audioSource.Play();
@@ -59,7 +56,6 @@ public class AudioPlayer : MonoBehaviour
     {
         if (audioSource != null && audioSource.isPlaying && audioSource.clip != null && Array.Exists(mainGameClips, clip => clip == audioSource.clip))
         {
-            Debug.Log($"Parando main game audio: {audioSource.clip.name}");
             audioSource.Stop();
         }
     }

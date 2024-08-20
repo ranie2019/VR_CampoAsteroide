@@ -14,6 +14,10 @@ public class StartGame : MonoBehaviour
     [Tooltip("Referência ao ParticleSystem que será ativado.")]
     [SerializeField] private ParticleSystem particleSystem;
 
+    [Header("Objeto a ser habilitado")]
+    [Tooltip("Objeto cujo MeshRenderer do filho será habilitado.")]
+    [SerializeField] private GameObject objectToEnableMeshRenderer;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Laser"))
@@ -33,13 +37,23 @@ public class StartGame : MonoBehaviour
         // Troca o áudio de introdução para o áudio principal do jogo
         if (audioPlayer != null)
         {
-            audioPlayer.PlayRandomMainGameAudio(); // Atualize para o método correto
+            audioPlayer.PlayRandomMainGameAudio();
         }
 
         // Ativa o ParticleSystem
         if (particleSystem != null)
         {
             particleSystem.Play();
+        }
+
+        // Habilita o MeshRenderer do filho do objeto manualmente escolhido
+        if (objectToEnableMeshRenderer != null)
+        {
+            MeshRenderer childMeshRenderer = objectToEnableMeshRenderer.GetComponentInChildren<MeshRenderer>();
+            if (childMeshRenderer != null)
+            {
+                childMeshRenderer.enabled = true;
+            }
         }
 
         // Desativa o objeto StartGame

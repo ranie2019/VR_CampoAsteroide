@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 426654}
+  - component: {fileID: 3999546740824629490}
   m_Layer: 0
   m_Name: EarthHigh
   m_TagString: Untagged
@@ -24,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132870}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.052508477, y: 0.014541205, z: -0.26648882, w: 0.96229684}
+  m_LocalRotation: {x: -0.05250991, y: 0.014543403, z: -0.26649082, w: 0.9622961}
   m_LocalPosition: {x: -836, y: 192, z: 140}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32,6 +33,19 @@ Transform:
   - {fileID: 459932}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -5.354, y: 3.223, z: -31.109}
+--- !u!114 &3999546740824629490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca658a4b482e6314b9680b84f6f6a0f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadeRotacao: 5
 --- !u!1 &160422
 GameObject:
   m_ObjectHideFlags: 0

@@ -8600,8 +8600,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.08
-  m_fontSizeBase: 0.08
+  m_fontSize: 0.07
+  m_fontSizeBase: 0.07
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9334,6 +9334,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1771892898}
+  - {fileID: 1217323470}
   - {fileID: 674688461}
   m_Father: {fileID: 1701435559}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9357,6 +9358,7 @@ MonoBehaviour:
   audioPlayer: {fileID: 1572810736}
   asteroidSpawnerScript: {fileID: 1174005519}
   particleSystem: {fileID: 1304465833}
+  objectToEnableMeshRenderer: {fileID: 2015124000}
 --- !u!65 &1061184322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9576,6 +9578,7 @@ MonoBehaviour:
   audioPlayer: {fileID: 1572810736}
   asteroidSpawnerScript: {fileID: 1174005519}
   particleSystem: {fileID: 1304465833}
+  objectToEnableMeshRenderer: {fileID: 2015124000}
 --- !u!65 &1135362002
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9750,7 +9753,7 @@ Transform:
   m_GameObject: {fileID: 1174005517}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1076, y: 189, z: 285}
+  m_LocalPosition: {x: 1259, y: 189, z: 285}
   m_LocalScale: {x: 5.1676497, y: 0.84, z: 2.2305121}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9769,7 +9772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnerSize: {x: 124, y: 134.3, z: 299.3}
-  spawnRate: 0.7
+  spawnRate: 0.3
   asteroidModels:
   - {fileID: 8512000840424516683, guid: 87b3e627d564e3a4e93019febe1473e9, type: 3}
   - {fileID: 151664, guid: fa49e460baf435b4780da7196c2ab473, type: 3}
@@ -10226,6 +10229,140 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4256408802689727948, guid: 71aead153a51edc4093e3b9556d6c10a, type: 3}
   m_PrefabInstance: {fileID: 1212002508}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1217323469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1217323470}
+  - component: {fileID: 1217323472}
+  - component: {fileID: 1217323471}
+  m_Layer: 0
+  m_Name: Text (TMP) (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1217323470
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217323469}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.19762005, z: 5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1061184320}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0.8390007}
+  m_SizeDelta: {x: -97, y: -97}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1217323471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217323469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Destroy the asteroids to stop the Earth from being destroyed
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 0.5
+  m_fontSizeBase: 0.5
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: -1.8566365, z: 0, w: 4.100236}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1217323472
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217323469}
+  m_CullTransparentMesh: 1
 --- !u!1 &1218248409
 GameObject:
   m_ObjectHideFlags: 0
@@ -10299,7 +10436,7 @@ Transform:
   m_GameObject: {fileID: 1268484815}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -771, y: 180, z: 294}
+  m_LocalPosition: {x: -1660, y: 180, z: 294}
   m_LocalScale: {x: 18.1614, y: 193.74179, z: 394.5054}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10392,6 +10529,10 @@ MonoBehaviour:
   asteroidTag: Asteroid
   gameOverUI: {fileID: 1135361999}
   audioPlayer: {fileID: 1572810736}
+  particleSystemPrefab1: {fileID: 19800004, guid: b46890100828db6429ff69c322b45893, type: 3}
+  particleSystemPrefab2: {fileID: 19800002, guid: 3364c97de68d3a147af572d1c71c6455, type: 3}
+  particleSystemPrefab3: {fileID: 19800002, guid: 6ecf76dc4f268d340b2666896a954bcc, type: 3}
+  objectToDisableMeshRenderer: {fileID: 2015124000}
 --- !u!54 &1268484821
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17449,7 +17590,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c2dc8eaea9ad2554fb4d5f3bac872b4b, type: 3}
   - {fileID: 8300000, guid: 0dc4a9fb41a000841bdd3e14e428e457, type: 3}
   - {fileID: 8300000, guid: a742e096b32877345a42b4c2e71f31cf, type: 3}
-  gameOverClip: {fileID: 8300000, guid: 6a7025cbddf649d4cbbe9392504f322e, type: 3}
+  gameOverClip: {fileID: 8300000, guid: 0be60d4c9e6b760498f1b5de7909e147, type: 3}
 --- !u!1 &1580693791 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2009806360176422846, guid: 394a6fb029e057e429da551b7091f319, type: 3}
@@ -17846,8 +17987,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.08
-  m_fontSizeBase: 0.08
+  m_fontSize: 0.07
+  m_fontSizeBase: 0.07
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -19307,7 +19448,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 132870, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 3}
   m_PrefabInstance: {fileID: 6887200973205625396}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2015124001
+--- !u!114 &2015124002
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19316,10 +19457,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2015124000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca658a4b482e6314b9680b84f6f6a0f2, type: 3}
+  m_Script: {fileID: 11500000, guid: a4d5bd0d3e0c7024e8e4c486ca2dd500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadeRotacao: 5
+  attractionRadius: 1000
+  attractionForce: 10000
+  gravityMultiplier: 50
+  attractionSmoothing: 100
+  maxSpeed: 500
 --- !u!1 &2057810653 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3645114015131428387, guid: 4063295e4c703164a899864faf273f02, type: 3}
@@ -25193,6 +25338,10 @@ PrefabInstance:
       value: turret 1
       objectReference: {fileID: 0}
     - target: {fileID: 692336122906671368, guid: 4063295e4c703164a899864faf273f02, type: 3}
+      propertyPath: distance
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 692336122906671368, guid: 4063295e4c703164a899864faf273f02, type: 3}
       propertyPath: fireRate
       value: 3
       objectReference: {fileID: 0}
@@ -25846,7 +25995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b02f974098562b41bd08b289a6b31ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 3000
+  distance: 1000
   mount: {fileID: 1639302381}
   head: {fileID: 1313895309}
   attachPoints:
@@ -26569,19 +26718,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 132870, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 3}
       propertyPath: m_Name
-      value: EarthHigh
+      value: Earth
+      objectReference: {fileID: 0}
+    - target: {fileID: 426654, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.297
+      objectReference: {fileID: 0}
+    - target: {fileID: 426654, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.297
+      objectReference: {fileID: 0}
+    - target: {fileID: 426654, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.297
       objectReference: {fileID: 0}
     - target: {fileID: 426654, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -905
+      value: -1699
       objectReference: {fileID: 0}
     - target: {fileID: 426654, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 115
+      value: 213
       objectReference: {fileID: 0}
     - target: {fileID: 426654, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 272
+      value: 308
       objectReference: {fileID: 0}
     - target: {fileID: 426654, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26617,7 +26778,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 132870, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2015124001}
+      addedObject: {fileID: 2015124002}
   m_SourcePrefab: {fileID: 100100000, guid: 27fe6d2a15a377f4587f716a2d37ca8a, type: 3}
 --- !u!4 &7013922254059976921 stripped
 Transform:
@@ -26650,7 +26811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b02f974098562b41bd08b289a6b31ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 3000
+  distance: 1000
   mount: {fileID: 1444392991}
   head: {fileID: 1326752061}
   attachPoints:
