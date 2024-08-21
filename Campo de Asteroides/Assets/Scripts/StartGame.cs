@@ -14,9 +14,13 @@ public class StartGame : MonoBehaviour
     [Tooltip("Referência ao ParticleSystem que será ativado.")]
     [SerializeField] private ParticleSystem particleSystem;
 
-    [Header("Objeto a ser habilitado")]
-    [Tooltip("Objeto cujo MeshRenderer do filho será habilitado.")]
-    [SerializeField] private GameObject objectToEnableMeshRenderer;
+    [Header("Game Controller")]
+    [Tooltip("Referência ao script GameController.")]
+    [SerializeField] private GameController gameController;
+
+    [Header("Mesh Renderer")]
+    [Tooltip("Referência ao MeshRenderer do objeto filho.")]
+    [SerializeField] private MeshRenderer childMeshRenderer;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -28,6 +32,12 @@ public class StartGame : MonoBehaviour
 
     private void HandleCollisionWithLaser()
     {
+        // Reseta a pontuação do jogador
+        if (gameController != null)
+        {
+            gameController.ResetScore();
+        }
+
         // Ativa o Spawner
         if (asteroidSpawnerScript != null)
         {
@@ -46,14 +56,10 @@ public class StartGame : MonoBehaviour
             particleSystem.Play();
         }
 
-        // Habilita o MeshRenderer do filho do objeto manualmente escolhido
-        if (objectToEnableMeshRenderer != null)
+        // Habilita o MeshRenderer do objeto filho
+        if (childMeshRenderer != null)
         {
-            MeshRenderer childMeshRenderer = objectToEnableMeshRenderer.GetComponentInChildren<MeshRenderer>();
-            if (childMeshRenderer != null)
-            {
-                childMeshRenderer.enabled = true;
-            }
+            childMeshRenderer.enabled = true;
         }
 
         // Desativa o objeto StartGame

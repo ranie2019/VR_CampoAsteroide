@@ -240,6 +240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4874934499113314}
+  - component: {fileID: 3606049024549444545}
   m_Layer: 0
   m_Name: Satelite
   m_TagString: Untagged
@@ -255,7 +256,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412742708598286}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.4690508, y: 0.3432428, z: -0.7876514, w: 0.20440394}
+  m_LocalRotation: {x: -0.4690541, y: 0.3432442, z: -0.7876502, w: 0.20439872}
   m_LocalPosition: {x: 99.97667, y: 71.27453, z: 97.06347}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
@@ -269,6 +270,21 @@ Transform:
   - {fileID: 4471139398397712}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 20.424, y: 69.751, z: -136.592}
+--- !u!114 &3606049024549444545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412742708598286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f7b6e1bc27c41246841a8c78119da31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 50
+  orbitSpeed: 0.05
+  orbitRadius: 500
 --- !u!1 &1577956311297630
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,7 +429,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 911d2c7b56e35d545a8e60fc34db34aa, type: 2}
+  - {fileID: 2100000, guid: beddab29991e85242a3b1b6b0ed7f1c4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

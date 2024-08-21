@@ -40,7 +40,7 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos: []
-  m_VirtualRealitySplashScreen: {fileID: 0}
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
@@ -169,7 +169,7 @@ PlayerSettings:
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 23
+  AndroidMinSdkVersion: 27
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 0
   aotOptions: 
@@ -263,7 +263,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: D:/Unity Projetos/VR_CampoAsteroide/user.keystore
+  AndroidKeystoreName: '{inproject}: user.keystore'
   AndroidKeyaliasName: ranie
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidBuildApkPerCpuArchitecture: 0
@@ -283,41 +283,61 @@ PlayerSettings:
   AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
+      - {fileID: 0}
       m_Width: 432
       m_Height: 432
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
+      - {fileID: 0}
       m_Width: 324
       m_Height: 324
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
+      - {fileID: 0}
       m_Width: 216
       m_Height: 216
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
+      - {fileID: 0}
       m_Width: 162
       m_Height: 162
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
+      - {fileID: 0}
       m_Width: 108
       m_Height: 108
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
+      - {fileID: 0}
       m_Width: 81
       m_Height: 81
       m_Kind: 2
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 1
@@ -347,7 +367,8 @@ PlayerSettings:
       m_Height: 36
       m_Kind: 1
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 0
@@ -749,7 +770,7 @@ PlayerSettings:
     PS5: ULTIMATEXR_USE_WINDOWSMIXEDREALITY_SDK
     QNX: ULTIMATEXR_USE_WINDOWSMIXEDREALITY_SDK
     Stadia: ULTIMATEXR_USE_WINDOWSMIXEDREALITY_SDK
-    Standalone: USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS;ULTIMATEXR_USE_WINDOWSMIXEDREALITY_SDK
+    Standalone: 
     VisionOS: ULTIMATEXR_USE_WINDOWSMIXEDREALITY_SDK
     WebGL: ULTIMATEXR_USE_WINDOWSMIXEDREALITY_SDK
     Windows Store Apps: USE_INPUT_SYSTEM_POSE_CONTROL;USE_STICK_CONTROL_THUMBSTICKS;ULTIMATEXR_USE_WINDOWSMIXEDREALITY_SDK
