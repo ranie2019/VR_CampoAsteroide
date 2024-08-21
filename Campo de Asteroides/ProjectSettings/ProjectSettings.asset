@@ -16,7 +16,7 @@ PlayerSettings:
   productName: Destroy the Asteroids
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
@@ -40,7 +40,7 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos: []
-  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 8991991cb46baaa4ab07c67a2f8b0ea7, type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
@@ -140,7 +140,10 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 0.1
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: -5115668367379283422, guid: e9d758dffff27ec4e85268fed5a05769, type: 2}
+  - {fileID: 11400000, guid: bfa1244125c87f94fbb05ecf3ec3f211, type: 2}
+  - {fileID: -6067505740983815182, guid: d5dbde650efea6d4293e87ba190b3968, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -262,7 +265,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 1
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
-  androidSplashScreen: {fileID: 0}
+  androidSplashScreen: {fileID: 2800000, guid: 55478a533be8f6c40b1ac1e3312ebad0, type: 3}
   AndroidKeystoreName: '{inproject}: user.keystore'
   AndroidKeyaliasName: ranie
   AndroidEnableArmv9SecurityFeatures: 0
@@ -287,7 +290,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
+      m_Icon: {fileID: 2800000, guid: 55478a533be8f6c40b1ac1e3312ebad0, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -295,43 +298,43 @@ PlayerSettings:
   - m_BuildTarget: Android
     m_Icons:
     - m_Textures:
-      - {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
-      - {fileID: 0}
+      - {fileID: 2800000, guid: 66794316cc57ecc46b4d41731a28856d, type: 3}
+      - {fileID: 2800000, guid: 66794316cc57ecc46b4d41731a28856d, type: 3}
       m_Width: 432
       m_Height: 432
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
-      - {fileID: 0}
+      - {fileID: 2800000, guid: 07e0a405b74bb4b49b416de9beb0adbe, type: 3}
+      - {fileID: 2800000, guid: 07e0a405b74bb4b49b416de9beb0adbe, type: 3}
       m_Width: 324
       m_Height: 324
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
-      - {fileID: 0}
+      - {fileID: 2800000, guid: 793c7183d21a2834a96f3321d90c2d14, type: 3}
+      - {fileID: 2800000, guid: 793c7183d21a2834a96f3321d90c2d14, type: 3}
       m_Width: 216
       m_Height: 216
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
-      - {fileID: 0}
+      - {fileID: 2800000, guid: 7e89c7ed3a8687c458bd28b411c32403, type: 3}
+      - {fileID: 2800000, guid: 7e89c7ed3a8687c458bd28b411c32403, type: 3}
       m_Width: 162
       m_Height: 162
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
-      - {fileID: 0}
+      - {fileID: 2800000, guid: e77543219f6bb4d4ebed56d46692f97a, type: 3}
+      - {fileID: 2800000, guid: e77543219f6bb4d4ebed56d46692f97a, type: 3}
       m_Width: 108
       m_Height: 108
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 3878e7e3ed6161f458cc6b97bf32e01a, type: 3}
-      - {fileID: 0}
+      - {fileID: 2800000, guid: 545dce561e4899c439020ae5409adcbf, type: 3}
+      - {fileID: 2800000, guid: 545dce561e4899c439020ae5409adcbf, type: 3}
       m_Width: 81
       m_Height: 81
       m_Kind: 2
@@ -373,27 +376,32 @@ PlayerSettings:
       m_Height: 192
       m_Kind: 0
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 0}
       m_Width: 144
       m_Height: 144
       m_Kind: 0
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 0}
       m_Width: 96
       m_Height: 96
       m_Kind: 0
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 0}
       m_Width: 72
       m_Height: 72
       m_Kind: 0
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 0}
       m_Width: 48
       m_Height: 48
       m_Kind: 0
       m_SubKind: 
-    - m_Textures: []
+    - m_Textures:
+      - {fileID: 0}
       m_Width: 36
       m_Height: 36
       m_Kind: 0
