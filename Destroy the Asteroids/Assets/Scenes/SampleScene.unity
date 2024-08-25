@@ -8850,7 +8850,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserAnimator: {fileID: 2193720263809409788}
   laserSFX: {fileID: 8300000, guid: fa5f15d5c001e1249a46f30914256f91, type: 3}
-  raycastOrigin: {fileID: 0}
+  raycastOrigin: {fileID: 872288967}
   bulletPrefab: {fileID: 4016273362745119833, guid: 769dd651998a4594f9f3b86844decaff, type: 3}
   bulletSpeed: 900
   bulletSpawnPoint: {fileID: 872288967}
@@ -19212,7 +19212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserAnimator: {fileID: 2193720264913241274}
   laserSFX: {fileID: 8300000, guid: fa5f15d5c001e1249a46f30914256f91, type: 3}
-  raycastOrigin: {fileID: 0}
+  raycastOrigin: {fileID: 1631228956}
   bulletPrefab: {fileID: 4016273362745119833, guid: 769dd651998a4594f9f3b86844decaff, type: 3}
   bulletSpeed: 900
   bulletSpawnPoint: {fileID: 1631228956}

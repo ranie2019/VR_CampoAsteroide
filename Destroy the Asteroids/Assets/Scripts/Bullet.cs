@@ -28,9 +28,13 @@ public class Bullet : MonoBehaviour
 
     private void HandleCollision(Collision collision)
     {
+        // Log para verificar a colisão
+        Debug.Log($"Colidiu com: {collision.gameObject.name} - Tag: {collision.gameObject.tag}");
+
         // Verifica se o objeto colidido tem a tag "Asteroid"
         if (collision.gameObject.CompareTag("Asteroid"))
         {
+            // Destrói o objeto com a tag "Asteroid"
             Destroy(collision.gameObject);
         }
 
